@@ -1,15 +1,17 @@
-import org.kohsuke.github.GHRepository;
-import org.kohsuke.github.GitHub;
+import org.kohsuke.github.*;
 
 public class Search {
     public static void main(String[] args) throws Exception {
-        GitHub github = GitHub.connectAnonymously();
+        GitHub github = GitHub.connectUsingPassword("iluhachernyshov@ukr.net","63h0dUcONW121q");
+        /*
         int i=1;
-        for (GHRepository rep : github.searchRepositories().q("IoT").list())
+        for (GHContent cont : github.searchContent().q("name").filename("library.properties").path("/").list())
         {
-            System.out.println(i+". "+rep.getHtmlUrl());
+            System.out.println(". "+cont.getHtmlUrl());
             i++;
-            if (i==11) break;
+            if (i==6) break;
         }
+        */
+        //System.out.println(github.searchContent().q("name").filename("library.properties").path("/").list().getTotalCount());
     }
 }
