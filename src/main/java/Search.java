@@ -16,13 +16,10 @@ public class Search {
             //System.out.println(". " + cont.getHtmlUrl());
             s = cont.getHtmlUrl();
             s = s.substring(s.indexOf("github.com/") + 11, s.indexOf("/blob/"));
-            //System.out.println(s);
             repo = github.getRepository(s);
-            System.out.print(repo.getOwnerName() + ", ");
-            System.out.print(repo.getName() + ", ");
-            System.out.print(repo.getDefaultBranch() + ", ");
-            System.out.print(repo.getStargazersCount()+"\n");
-            file.write(repo.getOwnerName() + ", "+repo.getName() + ", "+repo.getDefaultBranch() + ", "+repo.getStargazersCount());
+            s="".concat(repo.getOwnerName() + ", ").concat(repo.getName() + ", ").concat(repo.getDefaultBranch() + ", ").concat(String.valueOf(repo.getStargazersCount()));
+            System.out.print(s+"\n");
+            file.write(s);
             file.write(System.getProperty("line.separator"));
             Thread.sleep(2001);
             i++;
